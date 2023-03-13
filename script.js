@@ -9,6 +9,7 @@ window.onscroll = function () {
     var linkOne = document.getElementById('navbarLinkOne');
     var linkTwo = document.getElementById('navbarLinkTwo');
     var linkThree = document.getElementById('navbarLinkThree');
+    var linkFour = document.getElementById('navbarLinkFour');
     console.log(currentHeight);
     if (currentHeight >= (height * 2)) {
         lastHeight = height * 2 + 1;
@@ -20,6 +21,8 @@ window.onscroll = function () {
         linkTwo === null || linkTwo === void 0 ? void 0 : linkTwo.classList.remove('navbar__links--black');
         linkThree === null || linkThree === void 0 ? void 0 : linkThree.classList.add('navbar__links--red');
         linkThree === null || linkThree === void 0 ? void 0 : linkThree.classList.remove('navbar__links--black');
+        linkFour === null || linkFour === void 0 ? void 0 : linkFour.classList.add('navbar__links--red');
+        linkFour === null || linkFour === void 0 ? void 0 : linkFour.classList.remove('navbar__links--black');
     }
     else if (currentHeight >= height && currentHeight < (height * 2)) {
         if (currentHeight > lastHeight) {
@@ -31,6 +34,8 @@ window.onscroll = function () {
             linkTwo === null || linkTwo === void 0 ? void 0 : linkTwo.classList.remove('navbar__links');
             linkThree === null || linkThree === void 0 ? void 0 : linkThree.classList.add('navbar__links--black');
             linkThree === null || linkThree === void 0 ? void 0 : linkThree.classList.remove('navbar__links');
+            linkFour === null || linkFour === void 0 ? void 0 : linkFour.classList.add('navbar__links--black');
+            linkFour === null || linkFour === void 0 ? void 0 : linkFour.classList.remove('navbar__links');
         }
         else if (currentHeight < lastHeight) {
             navbar === null || navbar === void 0 ? void 0 : navbar.classList.add('navbar-white--from-gold');
@@ -41,6 +46,8 @@ window.onscroll = function () {
             linkTwo === null || linkTwo === void 0 ? void 0 : linkTwo.classList.remove('navbar__links--red');
             linkThree === null || linkThree === void 0 ? void 0 : linkThree.classList.add('navbar__links--black');
             linkThree === null || linkThree === void 0 ? void 0 : linkThree.classList.remove('navbar__links--red');
+            linkFour === null || linkFour === void 0 ? void 0 : linkFour.classList.add('navbar__links--black');
+            linkFour === null || linkFour === void 0 ? void 0 : linkFour.classList.remove('navbar__links--red');
         }
     }
     else if (currentHeight < height) {
@@ -54,5 +61,7 @@ window.onscroll = function () {
         linkTwo === null || linkTwo === void 0 ? void 0 : linkTwo.classList.remove('navbar__links--black');
         linkThree === null || linkThree === void 0 ? void 0 : linkThree.classList.add('navbar__links');
         linkThree === null || linkThree === void 0 ? void 0 : linkThree.classList.remove('navbar__links--black');
+        linkFour === null || linkFour === void 0 ? void 0 : linkFour.classList.add('navbar__links');
+        linkFour === null || linkFour === void 0 ? void 0 : linkFour.classList.remove('navbar__links--black');
     }
 };

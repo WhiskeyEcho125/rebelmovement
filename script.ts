@@ -10,6 +10,7 @@ window.onscroll = function () {
     var linkOne = document.getElementById('navbarLinkOne');
     var linkTwo = document.getElementById('navbarLinkTwo');
     var linkThree = document.getElementById('navbarLinkThree');
+    var linkFour = document.getElementById('navbarLinkFour');
 
     console.log(currentHeight);
     
@@ -20,6 +21,7 @@ window.onscroll = function () {
         linkOne?.classList.add('navbar__links--red'); linkOne?.classList.remove('navbar__links--black');
         linkTwo?.classList.add('navbar__links--red'); linkTwo?.classList.remove('navbar__links--black');
         linkThree?.classList.add('navbar__links--red'); linkThree?.classList.remove('navbar__links--black');
+        linkFour?.classList.add('navbar__links--red'); linkFour?.classList.remove('navbar__links--black');
     } else if (currentHeight >= height && currentHeight < (height * 2)) {
         if (currentHeight > lastHeight) {
             navbar?.classList.add('navbar-white'); navbar?.classList.remove('navbar');
@@ -27,12 +29,14 @@ window.onscroll = function () {
             linkOne?.classList.add('navbar__links--black'); linkOne?.classList.remove('navbar__links');
             linkTwo?.classList.add('navbar__links--black'); linkTwo?.classList.remove('navbar__links');
             linkThree?.classList.add('navbar__links--black'); linkThree?.classList.remove('navbar__links');
+            linkFour?.classList.add('navbar__links--black'); linkFour?.classList.remove('navbar__links');
         } else if (currentHeight < lastHeight) {
             navbar?.classList.add('navbar-white--from-gold'); navbar?.classList.remove('navbar-gold');
     
             linkOne?.classList.add('navbar__links--black'); linkOne?.classList.remove('navbar__links--red');
             linkTwo?.classList.add('navbar__links--black'); linkTwo?.classList.remove('navbar__links--red');
             linkThree?.classList.add('navbar__links--black'); linkThree?.classList.remove('navbar__links--red');
+            linkFour?.classList.add('navbar__links--black'); linkFour?.classList.remove('navbar__links--red');
         }
     } else if (currentHeight < height) {        
         lastHeight = 0;
@@ -41,5 +45,6 @@ window.onscroll = function () {
         linkOne?.classList.add('navbar__links'); linkOne?.classList.remove('navbar__links--black');
         linkTwo?.classList.add('navbar__links'); linkTwo?.classList.remove('navbar__links--black');
         linkThree?.classList.add('navbar__links'); linkThree?.classList.remove('navbar__links--black');
+        linkFour?.classList.add('navbar__links'); linkFour?.classList.remove('navbar__links--black');
     }
 }
