@@ -20,6 +20,12 @@
     font-family: 'Kumbh Sans', sans-serif;
 }
 
+
+@font-face {
+    font-family: 'Gloomy';
+    src: url(fonts/gloomy-23345087/Gloomy.otf) format("opentype");
+}
+
 .navbar {
     background: transparent;
     height: 80px;
@@ -28,7 +34,95 @@
     align-items: center;
     font-size: 1.2rem;
     z-index: 999;
+    position: sticky;
+    top: 0;
+    margin-bottom: -80px;
+
+    animation-name: background-expand;
+    animation-duration: 0.5s;
+
+    @keyframes background-expand {
+        0% {
+            background-color: white;
+        } 
+        100% {
+            background-color: transparent;
+        }
+    }
 }
+
+.navbar-white {
+    background: white;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    margin-bottom: -80px;
+    animation-name: background-expand-white;
+    animation-duration: 0.5s;
+
+    @keyframes background-expand-white {
+        0% {
+            background-color: transparent;
+        } 
+        100% {
+            background-color: white;
+        }
+    }
+}
+
+.navbar-white--from-gold {
+    background: white;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    margin-bottom: -80px;
+    animation-name: background-expand-white-from-gold;
+    animation-duration: 0.5s;
+
+    @keyframes background-expand-white-from-gold {
+        0% {
+            background-color: #b56648;
+        } 
+        100% {
+            background-color: white;
+        }
+    }
+}
+
+.navbar-gold {
+    background: #b56648;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    margin-bottom: -80px;
+    animation-name: background-expand-gold;
+    animation-duration: 0.5s;
+
+    @keyframes background-expand-gold {
+        0% {
+            background-color: white;
+        } 
+        100% {
+            background-color: #b56648;
+        }
+    }
+}
+
 
 .navbar__container {
     display: flex;
@@ -36,7 +130,6 @@
     height: 80px;
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
     margin: 0 auto;
     padding: 0 50px;
 }
@@ -59,10 +152,13 @@
 .main {
     height: 100vh;
     background-image: linear-gradient(to right top, rgb(0, 0, .2), rgba(0, 0, 0, 0.5)), url(images/tobias-rademacher-wnF27F85ZKw-unsplash_crop_1.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     position: relative;
     text-align: center;
+    box-shadow: 0 30px 116px -20px;
 }
 
 // .main__container {
@@ -88,13 +184,13 @@
 
 .navbar__menu {
     display: flex;
-    align-items: center;
+    align-items: right;
     list-style: none;
-    text-align: center;
+    text-align: right;
 }
 
 .navbar__item {
-    height: 80px
+    height: 80px;
 }
 
 .navbar__links {
@@ -103,7 +199,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-family: headerFont;
+    font-family: 'Gloomy';
     padding: 0 1rem;
     height: 100%;
     white-space: nowrap;
@@ -113,14 +209,45 @@
         color: black;
         transition: all 0.3s ease;
     }
-
-    @font-face {
-        font-family: headerFont;
-        src: url('fonts/Aboreto/Aboreto-Regular.ttf');
-    }    
 }
 
-.navbar__btn{
+.navbar__links--black {
+    color:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: 'Gloomy';
+    padding: 0 1rem;
+    height: 100%;
+    white-space: nowrap;
+    
+    &:hover{
+        background: black;
+        color: white;
+        transition: all 0.3s ease;
+    }
+}
+
+.navbar__links--red {
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: 'Gloomy';
+    padding: 0 1rem;
+    height: 100%;
+    white-space: nowrap;
+    
+    &:hover{
+        background: #b20000;
+        color: white;
+        transition: all 0.3s ease;
+    }
+}
+
+.navbar__btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,16 +256,17 @@
 }
 
 .button {
+    font-family: 'Gloomy';
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     padding: 10px 20px;
-    height: 100%;
+    height: 80%;
     width: 100%;
     outline: none;
     border-radius: 4px;
-    background: aqua;
+    background: #ddcfb4;
     color: black;
 }
 
@@ -147,12 +275,98 @@
     transition: all 0.3s ease;
 }
 
-
 .about__container{ 
     background-color: #FACDC3;
-    column-count: 4;
     column-gap: 40px;
     padding: 0;
+    display: inline;
+}
+
+.about__content {
+    height: 100vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 5vh;
+    background-image: linear-gradient(to right top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)), url(images/wesley-tingey-_0sEjWfAK3Q-unsplash_crop_1.jpg);
+    
+    &--header {
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+        font-family: 'Gloomy';
+        color: #b56648;
+        text-align: center;
+        font-size: 10rem;
+        text-shadow: 10px 5px 15px #00000077;
+    }
+
+    &--info {
+        font-family: 'Gloomy';
+        color: #b56648;
+        margin-top: 2rem;
+        font-size: 2rem;
+        text-align: center;
+        text-shadow: 10px 5px 15px #00000077;
+    }
+
+    &--welcome {
+        margin-top: 20vh;
+        font-family: 'Gloomy';
+        color: #b56648;
+        font-size: 6rem;
+        text-align: center;
+        text-shadow: 10px 5px 15px #00000077;
+    }
+}
+
+.about__content {
+    height: 100vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 5vh;
+    background-image: linear-gradient(to right top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)), url(images/wesley-tingey-_0sEjWfAK3Q-unsplash_crop_1.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    
+    &--header {
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+        font-family: 'Gloomy';
+        color: #b56648;
+        text-align: center;
+        font-size: 10rem;
+        text-shadow: 10px 5px 15px #00000077;
+    }
+
+    &--info {
+        font-family: 'Gloomy';
+        color: #b56648;
+        margin-top: 2rem;
+        font-size: 2rem;
+        text-align: center;
+        text-shadow: 10px 5px 15px #00000077;
+    }
+
+    &--welcome {
+        margin-top: 20vh;
+        font-family: 'Gloomy';
+        color: #b56648;
+        font-size: 6rem;
+        text-align: center;
+        text-shadow: 10px 5px 15px #00000077;
+    }
+}
+
+
+.about__content:nth-child(1) {
+    z-index: 9999;
+    shape-outside: polygon(0 0, 100% 0, 100% 100%, 0 120%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 120%);
+}
+
+.about__content:nth-child(even) {
+    text-align: right;
 }
 
 #person__img{
@@ -160,12 +374,10 @@
     align-items: center;
     width: 300px;
     height: 300px;
-
 }
 
 .about {
-    padding-bottom: 50vh;
-    background-image: linear-gradient(to right top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)), url(images/wesley-tingey-_0sEjWfAK3Q-unsplash_crop_1.jpg);
+    height: 100vh;
 
     &__team-header {
         text-align: center;
@@ -185,5 +397,85 @@
 
 .profile {
     box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.096);
+}
+
+.values__container {
+    text-align: center;
+    padding-top: 15vh;
+}
+.values__container--card {
+    display: inline-block;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    
+    background-color: transparent;
+    width: 15vw;
+    height: 30vh;
+    perspective: 1000px;
+}
+    
+.values__container--card--inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+    transition: transform 0.3s ease-out;
+    transform-style: preserve-3d;
+}
+    
+.values__container--card:hover .values__container--card--inner {
+    transform: rotateY(180deg);
+}        
+
+.values__container--value, .values__container--description {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.values__container--value {
+    text-align: center;
+    margin-top: 30%;
+    font-family: 'Gloomy';
+    font-size: 3rem;
+    color: #b56648;
+    text-shadow: 10px 5px 15px #00000077;
+}
+
+.values__container--description {
+    font-family: 'Gloomy';
+    font-size: 1.5rem;
+    color: #b56648;
+    text-shadow: 10px 5px 15px #00000077;
+    transform: rotateY(180deg);
+}
+
+
+.about-details {
+    &__container {
+        margin-top: 30vh;
+    }
+
+    &--detail {
+        font-family: 'Gloomy';
+        color: #b56648;
+    }
+
+    &--header {
+        font-family: 'Gloomy';
+        color: #b56648;
+    }
+}
+
+.footer {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    text-align: center;
+}
+
+.description__container {
+    background-color: #b20000;
+    height: 100vh;
 }
 
