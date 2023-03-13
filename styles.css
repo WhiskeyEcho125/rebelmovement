@@ -1,116 +1,447 @@
-* { 
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Kumbh Sans', sans-serif;
+/*
+    #b58b7f
+    #c8964f
+    #3e120f
+    #444010
+    #302f13
+    #b56648
+    #c87759
+    #ddcfb4
+    #ffe4ad
+    #e3be78
+    #945c2b
+    #b20000
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
+@font-face {
+  font-family: "Gloomy";
+  src: url(fonts/gloomy-23345087/Gloomy.otf) format("opentype");
+}
 .navbar {
-    background: #FACDC3;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
+  background: transparent;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  margin-bottom: -80px;
+  animation-name: background-expand;
+  animation-duration: 0.5s;
+}
+@keyframes background-expand {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.navbar-white {
+  background: white;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  margin-bottom: -80px;
+  animation-name: background-expand-white;
+  animation-duration: 0.5s;
+}
+@keyframes background-expand-white {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+.navbar-white--from-gold {
+  background: white;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  margin-bottom: -80px;
+  animation-name: background-expand-white-from-gold;
+  animation-duration: 0.5s;
+}
+@keyframes background-expand-white-from-gold {
+  0% {
+    background-color: #b56648;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+.navbar-gold {
+  background: #b56648;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  margin-bottom: -80px;
+  animation-name: background-expand-gold;
+  animation-duration: 0.5s;
+}
+@keyframes background-expand-gold {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #b56648;
+  }
 }
 
 .navbar__container {
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
 }
 
 #navbar__logo {
-    background-color: aliceblue;
-    background-image: linear-gradient(to top, aqua 0%, blue 100%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
+  background-color: aliceblue;
+  background-image: linear-gradient(to top, aqua 0%, blue 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
 }
 
-.fa-gem{
-    margin-right: 0.5rem;
+.main {
+  height: 100vh;
+  background-image: linear-gradient(to right top, black, rgba(0, 0, 0, 0.5)), url(images/tobias-rademacher-wnF27F85ZKw-unsplash_crop_1.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 30px 116px -20px;
+}
+
+.main-content__container {
+  height: 100vh;
+}
+
+.main-content {
+  color: white;
+  text-align: center;
+}
+
+.fa-gem {
+  margin-right: 0.5rem;
 }
 
 .navbar__menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    text-align: center;
+  display: flex;
+  align-items: right;
+  list-style: none;
+  text-align: right;
 }
 
 .navbar__item {
-    height: 80px
+  height: 80px;
 }
 
 .navbar__links {
-    color:black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "Gloomy";
+  padding: 0 1rem;
+  height: 100%;
+  white-space: nowrap;
+}
+.navbar__links:hover {
+  background: white;
+  color: black;
+  transition: all 0.3s ease;
 }
 
-.navbar__btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    width: 100%;
+.navbar__links--black {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "Gloomy";
+  padding: 0 1rem;
+  height: 100%;
+  white-space: nowrap;
+}
+.navbar__links--black:hover {
+  background: black;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.navbar__links--red {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "Gloomy";
+  padding: 0 1rem;
+  height: 100%;
+  white-space: nowrap;
+}
+.navbar__links--red:hover {
+  background: #b20000;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.navbar__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
 }
 
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    padding: 10px 20px;
-    height: 100%;
-    width: 100%;
-    outline: none;
-    border-radius: 4px;
-    background: aqua;
-    color: black;
+  font-family: "Gloomy";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 80%;
+  width: 100%;
+  outline: none;
+  border-radius: 4px;
+  background: #ddcfb4;
+  color: black;
 }
 
 .button:hover {
-    background: #4837ff;
-    transition: all 0.3s ease;
+  background: #4837ff;
+  transition: all 0.3s ease;
 }
 
-.navbar__links:hover{
-    background: white;
-    transition: all 0.3s ease;
+.about__container {
+  background-color: #FACDC3;
+  column-gap: 40px;
+  padding: 0;
+  display: inline;
 }
 
-.about__container{ 
-    background-color: #FACDC3;
-    column-count: 4;
-    column-gap: 40px;
-    padding: 0;
+.about__content {
+  height: 100vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-top: 5vh;
+  background-image: linear-gradient(to right top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)), url(images/wesley-tingey-_0sEjWfAK3Q-unsplash_crop_1.jpg);
+}
+.about__content--header {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  font-family: "Gloomy";
+  color: #b56648;
+  text-align: center;
+  font-size: 10rem;
+  text-shadow: 10px 5px 15px #00000077;
+}
+.about__content--info {
+  font-family: "Gloomy";
+  color: #b56648;
+  margin-top: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 10px 5px 15px #00000077;
+}
+.about__content--welcome {
+  margin-top: 20vh;
+  font-family: "Gloomy";
+  color: #b56648;
+  font-size: 6rem;
+  text-align: center;
+  text-shadow: 10px 5px 15px #00000077;
 }
 
-#person__img{
-    border-radius: 50%;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-
+.about__content {
+  height: 100vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-top: 5vh;
+  background-image: linear-gradient(to right top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)), url(images/wesley-tingey-_0sEjWfAK3Q-unsplash_crop_1.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
 }
+.about__content--header {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  font-family: "Gloomy";
+  color: #b56648;
+  text-align: center;
+  font-size: 10rem;
+  text-shadow: 10px 5px 15px #00000077;
+}
+.about__content--info {
+  font-family: "Gloomy";
+  color: #b56648;
+  margin-top: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 10px 5px 15px #00000077;
+}
+.about__content--welcome {
+  margin-top: 20vh;
+  font-family: "Gloomy";
+  color: #b56648;
+  font-size: 6rem;
+  text-align: center;
+  text-shadow: 10px 5px 15px #00000077;
+}
+
+.about__content:nth-child(1) {
+  z-index: 9999;
+  shape-outside: polygon(0 0, 100% 0, 100% 100%, 0 120%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 120%);
+}
+
+.about__content:nth-child(even) {
+  text-align: right;
+}
+
+#person__img {
+  border-radius: 50%;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+}
+
+.about {
+  height: 100vh;
+}
+.about__team-header {
+  text-align: center;
+  font-size: 4rem;
+}
+.about__profiles {
+  white-space: nowrap;
+  text-align: center;
+}
+.about__profiles--profile {
+  display: inline-block;
+  width: 25vw;
+}
+
+.profile {
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.096);
+}
+
+.values__container {
+  text-align: center;
+  padding-top: 15vh;
+}
+
+.values__container--card {
+  display: inline-block;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  background-color: transparent;
+  width: 15vw;
+  height: 30vh;
+  perspective: 1000px;
+}
+
+.values__container--card--inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: justify;
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+.values__container--card:hover .values__container--card--inner {
+  transform: rotateY(180deg);
+}
+
+.values__container--value, .values__container--description {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.values__container--value {
+  text-align: center;
+  margin-top: 30%;
+  font-family: "Gloomy";
+  font-size: 3rem;
+  color: #b56648;
+  text-shadow: 10px 5px 15px #00000077;
+}
+
+.values__container--description {
+  font-family: "Gloomy";
+  font-size: 1.5rem;
+  color: #b56648;
+  text-shadow: 10px 5px 15px #00000077;
+  transform: rotateY(180deg);
+}
+
+.about-details__container {
+  margin-top: 30vh;
+}
+.about-details--detail {
+  font-family: "Gloomy";
+  color: #b56648;
+}
+.about-details--header {
+  font-family: "Gloomy";
+  color: #b56648;
+}
+
+.footer {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  text-align: center;
+}
+
+.description__container {
+  background-color: #b20000;
+  height: 100vh;
+}
+
+/*# sourceMappingURL=styles.css.map */
